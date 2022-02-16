@@ -2,8 +2,7 @@ import pandas as pd
 import random
 import time
 
-from sportmaster.parse import Parser
-# from limpopo.parse import LimpopoOrProSport
+from parser.parse import Parser
 
 HEADERS = [
     {
@@ -25,7 +24,6 @@ HEADERS = [
 ]
 
 parser = Parser(HEADERS)
-# limpopo = LimpopoOrProSport(random.choice(HEADERS))
 
 if __name__ == '__main__':
     input_file = pd.read_excel('COP 05718.xlsx')
