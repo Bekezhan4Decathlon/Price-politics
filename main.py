@@ -1,8 +1,9 @@
 import pandas as pd
 import random
 import time
-
-from parser.parse import Parser
+import os
+print(os.listdir('.'))
+from kaspi.parse import Parser
 
 HEADERS = [
     {
@@ -48,4 +49,4 @@ if __name__ == '__main__':
                     print(e)
 
 
-input_file.to_excel("test.xlsx")
+input_file.to_excel("test.xlsx", index=False)
