@@ -1,9 +1,9 @@
 import pandas as pd
 import random
 import time
-import os
-print(os.listdir('.'))
-from kaspi.parse import Parser
+# import os
+
+from COP_parser.cop_parse import Parser
 
 HEADERS = [
     {
@@ -38,7 +38,8 @@ if __name__ == '__main__':
                         input_file.loc[input_file[column] == link, "Sportmaster price"] = parser.get_price_sportmaster(link)
                         time.sleep(random.randrange(4, 8))
                     elif "kaspi" in link.lower():
-                        pass
+                        input_file.loc[input_file[column] == link, "Kaspi price"] = parser.get_price_kaspi(link)
+                        time.sleep(random.randrange(4, 8))
                     elif "limpopo" in link.lower():
                         input_file.loc[input_file[column] == link, "ProSport/Limpopo price"] = parser.get_price_limpopo(link)
                         time.sleep(random.randrange(4, 8))
